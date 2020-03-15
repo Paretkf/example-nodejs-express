@@ -26,7 +26,7 @@ jobs:
       - run: echo build done!
       # TEST
       - run: npm run test
-      - setup_remote_dockers
+      - setup_remote_docker
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       - run:
           name: "Build docker image and push to docker hub"
