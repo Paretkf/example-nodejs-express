@@ -31,7 +31,7 @@ jobs:
       - run:
           name: "Build docker image and push to docker hub"
           command: |
-            cp Dockerfile Dockerfile
+            cp Dockerfile.production Dockerfile
             docker build -t paretk/example-nodejs-circle:latest .
             docker build -t paretk/example-nodejs-circle:${CIRCLE_SHA1} .
             docker push paretk/example-nodejs-circle:latest
