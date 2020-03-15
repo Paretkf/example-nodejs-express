@@ -53,7 +53,7 @@ jobs:
               -e CATTLE_SECRET_KEY="$CATTLE_SECRET_KEY" \
               -e CATTLE_URL="$CATTLE_URL" \
               etlweather/gaucho upgrade $RANCHER_SERVICE \
-              --imageUuid 'docker:paretk/example-nodejs-circle:lastest' \
+              --imageUuid 'docker:paretk/example-nodejs-circle:latest' \
               --batch_size 3 --start_first \
               --auto_complete --timeout 600 \
               /
