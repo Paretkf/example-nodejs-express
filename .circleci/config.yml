@@ -15,7 +15,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
   test:
     docker:
       - image: circleci/node:8.11.1-stretch
@@ -32,7 +31,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: npm run test
-
   ship:
     docker:
       - image: circleci/node:8.11.1-stretch
@@ -66,7 +64,6 @@ jobs:
               echo "This is ${CIRCLE_BRANCH}"
             fi
       - run: echo build-docker done!
-
   deploy:
     docker:
       - image: circleci/node:8.11.1-stretch
