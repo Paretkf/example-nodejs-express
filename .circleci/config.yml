@@ -48,7 +48,7 @@ jobs:
       - run:
           name: "Trigger rancher upgrade"
           command: |
-            docker run --rm it \
+            docker run --rm -it \
               -e CATTLE_ACCESS_KEY="$CATTLE_ACCESS_KEY" \
               -e CATTLE_SECRET_KEY="$CATTLE_SECRET_KEY" \
               -e CATTLE_URL="$CATTLE_URL" \
