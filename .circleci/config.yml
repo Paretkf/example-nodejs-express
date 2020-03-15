@@ -85,11 +85,9 @@ workflows:
       - test
       - ship:
           requires:
-            - build
             - test
       - deploy:
           type: approval
           requires:
-            - build
             - test
             - deploy
