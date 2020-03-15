@@ -1,12 +1,7 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-# build , test , push to docker hub , deploy without workflows
 version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
       - image: circleci/node:8.11.1-stretch
     working_directory: ~/repo
     steps:
@@ -23,11 +18,9 @@ jobs:
 
   test:
     docker:
-      # specify the version you desire here
       - image: circleci/node:8.11.1-stretch
     working_directory: ~/repo
     steps:
-      # git pull
       - checkout
       - restore_cache:
           keys:
@@ -42,11 +35,9 @@ jobs:
 
   ship:
     docker:
-      # specify the version you desire here
       - image: circleci/node:8.11.1-stretch
     working_directory: ~/repo
     steps:
-      # git pull
       - checkout
       - restore_cache:
           keys:
@@ -78,11 +69,9 @@ jobs:
 
   deploy:
     docker:
-      # specify the version you desire here
       - image: circleci/node:8.11.1-stretch
     working_directory: ~/repo
     steps:
-      # git pull
       - checkout
       - restore_cache:
           keys:
@@ -118,6 +107,7 @@ workflows:
             - build
       - ship:
           requires:
+            - build
             - test
       - deploy:
           type: approval
