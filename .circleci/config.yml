@@ -96,7 +96,6 @@ jobs:
               --auto_complete --timeout 600 \
               /
       - run: echo build-docker done!
-
 workflows:
   version: 2
   build_test_ship_deploy:
