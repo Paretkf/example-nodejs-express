@@ -114,14 +114,14 @@ workflows:
     jobs:
       - build
       - test:
-        requires:
-          - build
+          requires:
+            - build
       - ship:
-        requires:
-          - test
+          requires:
+            - test
       - deploy:
-        type: approval
-        requires:
-          - build
-          - test
-          - deploy
+          type: approval
+          requires:
+            - build
+            - test
+            - deploy
